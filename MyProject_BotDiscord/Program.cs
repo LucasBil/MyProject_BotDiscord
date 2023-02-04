@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyProject_BotDiscord
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
