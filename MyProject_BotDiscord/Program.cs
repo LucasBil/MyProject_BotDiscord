@@ -52,15 +52,11 @@ namespace MyProject_BotDiscord
         private async Task HandleCommandAsync(SocketMessage pMessage)
         {
             var message = pMessage as SocketUserMessage;
-            Console.WriteLine(message);
+
             if (message == null) return;
 
             int argPos = 0; // Definition du ! comme commande
-            if (!message.HasCharPrefix('!', ref argPos) && !(message.MentionedUsers.Count() >= 1))
-            {
-                Console.WriteLine("Pas le bon préfix");
-                return;
-            }
+            if (!message.HasCharPrefix('!', ref argPos)) return;
 
             var context = new SocketCommandContext(client, message);
 
